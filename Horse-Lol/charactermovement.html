@@ -1,0 +1,81 @@
+
+<!-- saved from url=(0070)file:///C:/Users/17247/Desktop/coding/Horse-Lol/charactermovement.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title>Test Move Object</title>
+	</head><body onload="gameLoop();" onkeydown="" onkeyup="moveSelection(event)" bgcolor="yellow"><div>  
+<a href="file:///C:/Users/17247/Desktop/coding/Horse-Lol/horse.mp3.html">back to menu</a>
+	</div>
+
+var x = 5
+var y = 5
+
+       <script type="text/javascript">
+	document.write(x)
+	document.write(y)
+
+            function leftArrowPressed() {
+                var element = document.getElementById("image1");
+                element.style.left = parseInt(element.style.left) - 5 + 'px';
+	    x -= 5
+	    document.write(x)
+            }
+
+            function rightArrowPressed() {
+                var element = document.getElementById("image1");
+                element.style.left = parseInt(element.style.left) + 5 + 'px';
+	    x += 5
+	    document.write(x)
+            }
+
+            function upArrowPressed() {
+                var element = document.getElementById("image1");
+                element.style.top = parseInt(element.style.top) - 5 + 'px';
+	    y += 5
+	    document.write(y)
+            }
+
+            function downArrowPressed() {
+                var element = document.getElementById("image1");
+                element.style.top = parseInt(element.style.top) + 5 + 'px';
+ 	    y -= 5
+	    document.write(y)
+            }
+
+            function moveSelection(event) {                    
+                switch (event.keyCode) {
+                    case 37:
+                        leftArrowPressed();
+                    break;
+
+                    case 39:
+                        rightArrowPressed();
+                    break;
+
+                    case 38:
+                        upArrowPressed();
+                    break;
+
+                    case 40:
+                        downArrowPressed();
+                    break;
+                }
+            };
+
+        function gameLoop()
+        {
+            // change position based on speed
+            moveSelection();
+            setTimeout("gameLoop()",10);
+        }
+
+  </script>
+  
+
+  
+   Test
+  <img id="image1" src="./charactermovement_files/horse.jpg" style="position: absolute; inset: 30px 40px auto 5px;" height="40" width="40">
+  <img id="image2" src="./charactermovement_files/star.png" style="position: absolute; left: 40; right: 40; top: 40; bottom: auto; " height="40" width="40">
+  
+   end html
+</body></html>
